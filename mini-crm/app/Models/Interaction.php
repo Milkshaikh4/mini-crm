@@ -9,4 +9,6 @@ class Interaction extends Model
 {
     /** @use HasFactory<\Database\Factories\InteractionFactory> */
     use HasFactory;
+
+    protected $fillable = ['type', 'notes'];
 }
