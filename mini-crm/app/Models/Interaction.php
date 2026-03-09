@@ -10,5 +10,20 @@ class Interaction extends Model
     /** @use HasFactory<\Database\Factories\InteractionFactory> */
     use HasFactory;
 
-    protected $fillable = ['type', 'notes'];
+    protected $fillable = ['user_id', 'company_id', 'contact_id', 'type', 'notes'];
+
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

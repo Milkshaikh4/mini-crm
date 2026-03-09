@@ -24,6 +24,6 @@ class InteractionController extends Controller
         Interaction::create($request->validated());
 
         return redirect()->route('dashboard')
-            ->with('success', 'Contact created successfully!');
+            ->with('success', 'Interaction created successfully!');
     }
 }
