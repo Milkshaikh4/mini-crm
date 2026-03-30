@@ -5,6 +5,8 @@ use App\Models\Company;
 use App\Models\Contact;
 use App\Models\Interaction;
 
+// Very interesting component, uses Livewire to create a dynamic form for creating interactions.
+// When a company is selected, it fetches the related contacts and updates the contact dropdown.
 new class extends Component {
     public $companies;
     public $contacts = [];
@@ -60,7 +62,7 @@ new class extends Component {
         <div>
             <x-input-label :value="__('Contact')" />
             <select wire:model="selectedContact" class="w-full border-gray-300 rounded-md shadow-sm">
-                <option value="">-- Select Contact --</option>
+                <option value="">-- Select Contact, first select a company --</option>
                 @foreach ($contacts as $contact)
                     <option value="{{ $contact->id }}">{{ $contact->first_name }} {{ $contact->last_name }}</option>
                 @endforeach
